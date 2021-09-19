@@ -1,5 +1,6 @@
 import 'dart:math';
 
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class SignUpScreen extends StatefulWidget {
@@ -9,7 +10,9 @@ class SignUpScreen extends StatefulWidget {
 
 const inputFieldStyle = TextStyle(fontSize: 15, height: 0.5);
 const whitegray = Color(0xFFF5F5F5);
+const dark = Color(0xFF383838);
 var isAgree = false;
+bool _isObscure = true;
 
 class _SignUpScreenState extends State<SignUpScreen> {
   @override
@@ -31,15 +34,16 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   fit: BoxFit.cover),
             ),
             child: Container(
-              margin: EdgeInsets.fromLTRB(0, 130, 0, 0),
+              margin: EdgeInsets.fromLTRB(0, 135, 0, 0),
               child: Column(
                 children: <Widget>[
                   Container(
                     child: Text(
                       'Create an account',
                       style: TextStyle(
-                        fontSize: 30,
+                        fontSize: 27,
                         fontFamily: 'Montserrat',
+                        fontWeight: FontWeight.bold,
                       ),
                     ),
                   ),
@@ -73,10 +77,22 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         Container(
                           color: whitegray,
                           child: TextField(
-                            obscureText: true,
+                            obscureText: _isObscure,
                             decoration: InputDecoration(
                               border: const OutlineInputBorder(),
                               labelText: 'Password',
+                              suffixIcon: IconButton(
+                                icon: Icon(
+                                  _isObscure
+                                      ? Icons.visibility
+                                      : Icons.visibility_off,
+                                ),
+                                onPressed: () {
+                                  setState(() {
+                                    _isObscure = !_isObscure;
+                                  });
+                                },
+                              ),
                             ),
                             style: inputFieldStyle,
                           ),
@@ -88,6 +104,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
                             mainAxisAlignment: MainAxisAlignment.start,
                             children: <Widget>[
                               Checkbox(
+                                checkColor: Colors.yellow,
+                                activeColor: dark,
                                 value: isAgree,
                                 onChanged: (bool? value) {
                                   setState(() {
@@ -101,6 +119,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                     Text(
                                       'I agree to ',
                                       style: TextStyle(
+                                        fontSize: 12,
                                         fontFamily: 'Poppins',
                                       ),
                                     ),
@@ -109,12 +128,14 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                       style: TextStyle(
                                         fontWeight: FontWeight.bold,
                                         decoration: TextDecoration.underline,
+                                        fontSize: 12,
                                         fontFamily: 'Poppins',
                                       ),
                                     ),
                                     Text(
                                       ' and ',
                                       style: TextStyle(
+                                        fontSize: 12,
                                         fontFamily: 'Poppins',
                                       ),
                                     ),
@@ -123,6 +144,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                       style: TextStyle(
                                         fontWeight: FontWeight.bold,
                                         decoration: TextDecoration.underline,
+                                        fontSize: 12,
                                         fontFamily: 'Poppins',
                                       ),
                                     ),
@@ -139,13 +161,14 @@ class _SignUpScreenState extends State<SignUpScreen> {
                             child: Text('Sign Up'),
                             style: ButtonStyle(
                               backgroundColor: MaterialStateColor.resolveWith(
-                                  (states) => Color(0xFF383838)),
+                                  (states) => dark),
                               fixedSize: MaterialStateProperty.resolveWith(
                                 (states) => Size.fromWidth(310),
                               ),
                             ),
                           ),
                         ),
+                        Container(),
                       ],
                     ),
                   ),
