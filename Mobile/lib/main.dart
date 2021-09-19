@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-
+import './screens/sign_up_screen.dart';
 import './screens/first_time_screen.dart';
 import './screens/get_started1_screen.dart';
 import './screens/get_started2_screen.dart';
@@ -42,7 +42,13 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: MainScreen(),
+      appBar: AppBar(
+        // Here we take the value from the MyHomePage object that was created by
+        // the App.build method, and use it to set our appbar title.
+        title: Text(widget.title),
+      ),
+      body: SignUpScreen(),
+      // body: MainScreen(),
     );
   }
 }

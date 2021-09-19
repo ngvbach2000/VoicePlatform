@@ -1,7 +1,7 @@
 name: voice_platform
 description: A new Flutter project.
 
-publish_to: 'none'
+publish_to: "none"
 
 version: 1.0.0+1
 
@@ -23,11 +23,12 @@ dev_dependencies:
   flutter_lints: ^1.0.0
 
 flutter:
-
   assets:
     - assets/images/logo.png
     - assets/images/get_started1.png
     - assets/images/get_started2.png
+    - assets/images/signin-bg.png
+    - assets/images/google.svg
 
   fonts:
     - family: Gugi
