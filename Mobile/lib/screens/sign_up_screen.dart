@@ -2,6 +2,7 @@ import 'dart:math';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class SignUpScreen extends StatefulWidget {
   @override
@@ -34,7 +35,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   fit: BoxFit.cover),
             ),
             child: Container(
-              margin: EdgeInsets.fromLTRB(0, 135, 0, 0),
+              margin: EdgeInsets.only(top: 135),
               child: Column(
                 children: <Widget>[
                   Container(
@@ -48,7 +49,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     ),
                   ),
                   Container(
-                    margin: EdgeInsets.fromLTRB(0, 40, 0, 0),
+                    margin: EdgeInsets.only(top: 40),
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
@@ -99,7 +100,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                           margin: const EdgeInsets.fromLTRB(50, 15, 50, 0),
                         ),
                         Container(
-                          margin: EdgeInsets.fromLTRB(40, 0, 0, 0),
+                          margin: EdgeInsets.only(left: 40),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.start,
                             children: <Widget>[
@@ -158,7 +159,13 @@ class _SignUpScreenState extends State<SignUpScreen> {
                           // color: Color(0xFF383838),
                           child: ElevatedButton(
                             onPressed: () {},
-                            child: Text('Sign Up'),
+                            child: Text(
+                              'Sign Up',
+                              style: TextStyle(
+                                fontFamily: 'Montserrat',
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
                             style: ButtonStyle(
                               backgroundColor: MaterialStateColor.resolveWith(
                                   (states) => dark),
@@ -168,7 +175,64 @@ class _SignUpScreenState extends State<SignUpScreen> {
                             ),
                           ),
                         ),
-                        Container(),
+                        Container(
+                          child: ElevatedButton(
+                            onPressed: () {},
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: <Widget>[
+                                SvgPicture.asset('assets/images/google.svg'),
+                                Text(
+                                  'Continue with Google',
+                                  style: TextStyle(
+                                    fontFamily: 'Montserrat',
+                                    color: dark,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                              ],
+                            ),
+                            style: ButtonStyle(
+                              backgroundColor: MaterialStateColor.resolveWith(
+                                  (states) => Colors.white),
+                              fixedSize: MaterialStateProperty.resolveWith(
+                                (states) => Size.fromWidth(310),
+                              ),
+                            ),
+                          ),
+                        ),
+                        Container(
+                          margin: EdgeInsets.only(left: 30),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: <Widget>[
+                              Text(
+                                'Already have an account? ',
+                                style: TextStyle(
+                                  fontFamily: 'Poppins',
+                                  fontSize: 10,
+                                ),
+                              ),
+                              TextButton(
+                                onPressed: () {},
+                                child: Text(
+                                  'Sign in',
+                                  style: TextStyle(
+                                    fontFamily: 'Poppins',
+                                    fontSize: 10,
+                                    fontWeight: FontWeight.bold,
+                                    color: dark,
+                                    decoration: TextDecoration.underline,
+                                  ),
+                                ),
+                                style: ButtonStyle(
+                                  padding: MaterialStateProperty.resolveWith(
+                                      (states) => EdgeInsets.only(right: 30)),
+                                ),
+                              )
+                            ],
+                          ),
+                        ),
                       ],
                     ),
                   ),

@@ -28,6 +28,7 @@ flutter:
     - assets/images/get_started1.png
     - assets/images/get_started2.png
     - assets/images/signin-bg.png
+    - assets/images/google.svg
 
   fonts:
     - family: Gugi
