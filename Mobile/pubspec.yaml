@@ -6,13 +6,15 @@ publish_to: 'none'
 version: 1.0.0+1
 
 environment:
-  sdk: ">=2.12.0 <3.0.0"
+  sdk: '>=2.12.0 <3.0.0'
 
 dependencies:
   flutter:
     sdk: flutter
   intl: ^0.17.0
   cupertino_icons: ^1.0.2
+  flutter_svg: ^0.22.0
+  simple_shadow: ^0.2.0
 
 dev_dependencies:
   flutter_test:
@@ -21,40 +23,39 @@ dev_dependencies:
   flutter_lints: ^1.0.0
 
 flutter:
+  assets:
+    - assets/images/logo.png
+    - assets/images/get_started1.png
+    - assets/images/get_started2.png
+    - fonts:
+        - family: 'Guri'
+          fonts:
+            - asset: 'assets/fonts/Guri-regular.ttf'
+              style: 'normal'
+              weight: 400
+        - family: 'Montserrat'
+          fonts:
+            - asset: 'assets/fonts/Montserrat-600.ttf'
+              style: 'normal'
+              weight: 600
+            - asset: 'assets/fonts/Montserrat-700.ttf'
+              style: 'normal'
+              weight: 700
+            - asset: 'assets/fonts/Montserrat-regular.ttf'
+              style: 'normal'
+              weight: 400
+        - family: 'Poppins'
+          fonts:
+            - asset: 'assets/fonts/Poppins-600.ttf'
+              style: 'normal'
+              weight: 600
+            - asset: 'assets/fonts/Poppins-500.ttf'
+              style: 'normal'
+              weight: 500
+        - family: 'Inter'
+          fonts:
+            - asset: 'assets/fonts/Inter-500.ttf'
+              style: 'normal'
+              weight: 500
 
-    assets:
-      - assets/images/logo.png
-      - assets/images/get_started1.png
-      - assets/images/get_started2.png
-      - fonts:
-          - family: "Guri"
-            fonts:
-              - asset: "assets/fonts/Guri-regular.ttf"
-                style: "normal"
-                weight: 400
-          - family: "Montserrat"
-            fonts:
-              - asset: "assets/fonts/Montserrat-600.ttf"
-                style: "normal"
-                weight: 600
-              - asset: "assets/fonts/Montserrat-700.ttf"
-                style: "normal"
-                weight: 700
-              - asset: "assets/fonts/Montserrat-regular.ttf"
-                style: "normal"
-                weight: 400
-          - family: "Poppins"
-            fonts:
-              - asset: "assets/fonts/Poppins-600.ttf"
-                style: "normal"
-                weight: 600
-              - asset: "assets/fonts/Poppins-500.ttf"
-                style: "normal"
-                weight: 500
-          - family: "Inter"
-            fonts:
-              - asset: "assets/fonts/Inter-500.ttf"
-                style: "normal"
-                weight: 500
-
-    uses-material-design: true
+  uses-material-design: true

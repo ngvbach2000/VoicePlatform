@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:voice_platform/components/modal.dart';
 
 void main() {
   runApp(const MyApp());
@@ -102,6 +103,16 @@ class _MyHomePageState extends State<MyHomePage> {
               '$_counter',
               style: Theme.of(context).textTheme.headline4,
             ),
+            const VoiceActorModal(
+              imageUrl:
+                  'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8YXZhdGFyfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
+              name: 'Nguyen Viet Bo',
+              bio: '“Lorem ipsum dolor sit amet, consectetur adipiscing elit.”',
+              gender: 'Male',
+              voiceType: 'Low voice',
+              pricePerOneWord: 100,
+              rating: 5.0,
+            )
           ],
         ),
       ),
