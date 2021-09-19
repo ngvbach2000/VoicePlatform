@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:simple_shadow/simple_shadow.dart';
-import 'package:voice_platform/constants.dart';
+import '../constants/constants.dart';
 
 class VoiceActorModal extends StatelessWidget {
   final String imageUrl;
