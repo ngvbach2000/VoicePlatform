@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(const MyApp());
+class SignIn extends StatefulWidget {
+  @override
+  _signInScreen createState() => _signInScreen();
 }
 
-class MyApp extends StatelessWidget {
+class SignInScreen extends State<SignIn> {
   const MyApp({Key? key}) : super(key: key);
 
   // This widget is the root of your application.

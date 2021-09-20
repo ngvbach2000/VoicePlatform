@@ -5,6 +5,7 @@ import './screens/first_time_screen.dart';
 import './screens/get_started1_screen.dart';
 import './screens/get_started2_screen.dart';
 import './screens/main_screen.dart';
+import './screens/sign_in_screen.dart';
 
 void main() {
   SystemChrome.setPreferredOrientations([
@@ -47,7 +48,7 @@ class _MyHomePageState extends State<MyHomePage> {
         // the App.build method, and use it to set our appbar title.
         title: Text(widget.title),
       ),
-      body: SignUpScreen(),
+      body: SignInScreen(),
       // body: MainScreen(),
     );
   }
