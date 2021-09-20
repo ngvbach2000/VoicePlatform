@@ -1,22 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:voice_platform/constants/constants.dart';
 
-<<<<<<< HEAD
 class SignIn extends StatefulWidget {
   @override
-  _signInScreen createState() => _signInScreen();
+  _SignInScreen createState() => _SignInScreen();
 }
 
-class SignInScreen extends State<SignIn> {
-=======
-void main() {
-  runApp(const MyApp());
-}
+class _SignInScreen extends State<SignIn> {
 
-class MyApp extends StatelessWidget {
->>>>>>> dd7ceaaa61721bead6cd914709a385345067d9b9
-  const MyApp({Key? key}) : super(key: key);
-
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -32,20 +23,23 @@ class MyApp extends StatelessWidget {
               Center(
                 child: Column(
                   children: <Widget>[
-                    Text("Welcome to", style: TextStyle(
+                    Text("Chào mừng đến với", style: TextStyle(
                         fontWeight: FontWeight.bold,
-                        color: Colors.black,
-                        fontSize: 30),
+                        color: appDarkColor,
+                        fontFamily: "Montserrat",
+                        fontSize: 24),
                     ),
-                    Text("Voice Flatform", style: TextStyle(
+                    Text("Voice Platform!", style: TextStyle(
                         fontWeight: FontWeight.bold,
-                        color: Colors.yellow,
-                        fontSize: 30),
+                        color: appYellowColor,
+                        fontFamily: "Montserrat",
+                        fontSize: 24),
                     ),
-                    Text("Voice, the soul of content ", style: TextStyle(
+                    Text("Lorem ipsum dolor sit amet, consectetur adipiscing elit.", style: TextStyle(
                         fontWeight: FontWeight.bold,
-                        color: Colors.black,
-                        fontSize: 10),
+                        color: appDarkColor,
+                        fontFamily: "Montserrat",
+                        fontSize: 13),
                     ),
                   ],
                 ),
@@ -79,7 +73,7 @@ class MyApp extends StatelessWidget {
                       ),
                       decoration: InputDecoration(
                         border: OutlineInputBorder(),
-                        labelText: "Password",
+                        labelText: "Mật khẩu",
                         labelStyle: TextStyle(color: Color(0xff888888), fontSize: 15),
                       ),
                     ),
@@ -90,13 +84,14 @@ class MyApp extends StatelessWidget {
                 ),
               ),
               Container(
-                padding: const EdgeInsets.fromLTRB(0, 0, 0, 15),
+                padding: const EdgeInsets.fromLTRB(0, 0, 0, 20),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
                     Text(
-                      "Forgot password?",
+                      "Quên mật khẩu?",
                       style: TextStyle(
+                          fontFamily: "Poppins",
                           fontSize: 10,
                           color: Colors.black
                       ),
@@ -109,14 +104,14 @@ class MyApp extends StatelessWidget {
                 padding: const EdgeInsets.fromLTRB(0, 0, 0, 0),
                 child: SizedBox(
                   width: double.infinity,
-                  height: 30,
+                  height: 40,
                   child: RaisedButton(
-                    color: Colors.blue,
+                    color: appDarkColor,
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.all(Radius.circular(8))),
                     onPressed: onPressClicked,
                     child: Text(
-                      "SIGN IN",
+                      "Đăng nhập",
                       style: TextStyle(color: Colors.white, fontSize: 16),
                     ),
                   ),
@@ -127,7 +122,7 @@ class MyApp extends StatelessWidget {
                   padding: const EdgeInsets.fromLTRB(0, 150, 0, 0),
                   child: SizedBox(
                     width: double.infinity,
-                    height: 30,
+                    height: 42,
                     child: RaisedButton(
                       color: Colors.white,
                       shape: RoundedRectangleBorder(
@@ -148,10 +143,19 @@ class MyApp extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
                     Text(
-                      "Don't have an account? Register",
+                      "Don't have an account?",
                       style: TextStyle(
                           fontSize: 10,
                           color: Color(0xff888888)
+                      ),
+                    ),
+                    Text(
+                      "Register",
+                      style: TextStyle(
+                          fontFamily: "Montserrat",
+                          fontSize: 10,
+                          fontWeight: FontWeight.bold,
+                          color: appDarkColor
                       ),
                     ),
                   ],
