@@ -15,6 +15,7 @@ dependencies:
   cupertino_icons: ^1.0.2
   flutter_svg: ^0.22.0
   simple_shadow: ^0.2.0
+  audioplayers: ^0.20.0
 
 dev_dependencies:
   flutter_test:
@@ -27,8 +28,12 @@ flutter:
     - assets/images/logo.png
     - assets/images/get_started1.png
     - assets/images/get_started2.png
+    - assets/images/top-circle-bg.svg
     - assets/images/signin-bg.png
+    - assets/images/bot-circle-bg.svg
     - assets/images/google.svg
+    # json
+    - assets/json/voiceActors.json
 
   fonts:
     - family: Gugi
@@ -37,6 +42,8 @@ flutter:
           weight: 400
     - family: Montserrat
       fonts:
+        - asset: assets/fonts/Montserrat-Medium.ttf
+          weight: 500
         - asset: assets/fonts/Montserrat-600.ttf
           weight: 600
         - asset: assets/fonts/Montserrat-700.ttf
