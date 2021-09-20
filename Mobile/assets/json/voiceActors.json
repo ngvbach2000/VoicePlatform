@@ -1,0 +1,32 @@
+[
+  {
+    "id": "VC1",
+    "imageUrl": "https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8YXZhdGFyfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+    "name": "Nguyễn Việt Bò",
+    "bio": "Tôi có một giọng trầm và trẻ trung",
+    "gender": "Nam",
+    "region": "Hồ Chí Minh",
+    "voiceTypes": [
+      {
+        "id": 1,
+        "name": "Trầm"
+      },
+      {
+        "id": 2,
+        "name": "Trẻ trung"
+      }
+    ],
+    "pricePerOneWord": 100,
+    "rating": 5.0,
+    "voiceDemos": [
+      {
+        "id": 1,
+        "path": "https://firebasestorage.googleapis.com/v0/b/voice-source.appspot.com/o/voice1.mp3?alt=media&token=9b75491a-d945-47ba-912f-f1d55d6fbb73"
+      },
+      {
+        "id": 2,
+        "path": "https://firebasestorage.googleapis.com/v0/b/voice-source.appspot.com/o/voice2.mp3?alt=media&token=fa8cc777-73d3-4a73-a5e6-eaa650f1a281"
+      }
+    ]
+  }
+]
