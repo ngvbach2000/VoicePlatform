@@ -42,13 +42,15 @@ class GetStarted2 extends StatelessWidget {
                 width: 335,
                 child: RaisedButton(
                   child: const Text(
-                    'Next',
+                    'Tiếp theo',
                     style: TextStyle(
                       color: Colors.white,
                       fontSize: 20,
                     ),
                   ),
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.pushNamed(context, '/signup');
+                  },
                   color: Colors.black54,
                   shape: const RoundedRectangleBorder(
                     borderRadius: BorderRadius.all(Radius.circular(5)),

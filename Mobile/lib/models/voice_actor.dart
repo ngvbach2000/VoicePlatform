@@ -42,13 +42,15 @@ class VoiceActor {
 
   static List<VoiceType> parseVoiceTypes(voiceTypesJson) {
     var list = voiceTypesJson['voiceTypes'] as List;
-    List<VoiceType> voiceTypesList = list.map((data) => VoiceType.fromJson(data)).toList();
+    List<VoiceType> voiceTypesList =
+        list.map((data) => VoiceType.fromJson(data)).toList();
     return voiceTypesList;
   }
 
   static List<VoiceDemo> parseVoiceDemos(voiceDemosJson) {
     var list = voiceDemosJson['voiceDemos'] as List;
-    List<VoiceDemo> voiceDemosList = list.map((data) => VoiceDemo.fromJson(data)).toList();
+    List<VoiceDemo> voiceDemosList =
+        list.map((data) => VoiceDemo.fromJson(data)).toList();
     return voiceDemosList;
   }
 }
