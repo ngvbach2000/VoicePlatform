@@ -2,6 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
+import '../constants/constants.dart';
+
 class SignUpScreen extends StatefulWidget {
   const SignUpScreen({Key? key}) : super(key: key);
 
@@ -10,8 +12,6 @@ class SignUpScreen extends StatefulWidget {
 }
 
 const inputFieldStyle = TextStyle(fontSize: 15, height: 0.5);
-const whitegray = Color(0xFFF5F5F5);
-const dark = Color(0xFF383838);
 var isAgree = false;
 bool _isObscure = true;
 
@@ -20,24 +20,22 @@ class _SignUpScreenState extends State<SignUpScreen> {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        // appBar: AppBar(
-        //   backgroundColor: Colors.yellow,
-        //   title: Text('Sign up'),
-        // ),
         backgroundColor: Colors.white10,
         body: GestureDetector(
           onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
           child: Container(
             constraints: const BoxConstraints.expand(),
             decoration: const BoxDecoration(
-              image: DecorationImage(image: AssetImage('assets/images/signin-bg.png'), fit: BoxFit.cover),
+              image: DecorationImage(
+                  image: AssetImage('assets/images/signin-bg.png'),
+                  fit: BoxFit.cover),
             ),
             child: Container(
               margin: const EdgeInsets.only(top: 135),
               child: Column(
                 children: <Widget>[
                   const Text(
-                    'Create an account',
+                    'Tạo tài khoản',
                     style: TextStyle(
                       fontSize: 27,
                       fontFamily: 'Montserrat',
@@ -54,7 +52,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                           child: const TextField(
                             decoration: InputDecoration(
                               border: OutlineInputBorder(),
-                              labelText: 'Name',
+                              labelText: 'Tên tài khoản',
                             ),
                             style: inputFieldStyle,
                           ),
@@ -77,10 +75,12 @@ class _SignUpScreenState extends State<SignUpScreen> {
                             obscureText: _isObscure,
                             decoration: InputDecoration(
                               border: const OutlineInputBorder(),
-                              labelText: 'Password',
+                              labelText: 'Mật khẩu',
                               suffixIcon: IconButton(
                                 icon: Icon(
-                                  _isObscure ? Icons.visibility : Icons.visibility_off,
+                                  _isObscure
+                                      ? Icons.visibility
+                                      : Icons.visibility_off,
                                 ),
                                 onPressed: () {
                                   setState(() {
@@ -100,7 +100,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                             children: <Widget>[
                               Checkbox(
                                 checkColor: Colors.yellow,
-                                activeColor: dark,
+                                activeColor: appDarkColor,
                                 value: isAgree,
                                 onChanged: (bool? value) {
                                   setState(() {
@@ -150,14 +150,15 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         ElevatedButton(
                           onPressed: () {},
                           child: const Text(
-                            'Sign Up',
+                            'Đăng kí',
                             style: TextStyle(
                               fontFamily: 'Montserrat',
                               fontWeight: FontWeight.bold,
                             ),
                           ),
                           style: ButtonStyle(
-                            backgroundColor: MaterialStateColor.resolveWith((states) => dark),
+                            backgroundColor: MaterialStateColor.resolveWith(
+                                (states) => appDarkColor),
                             fixedSize: MaterialStateProperty.resolveWith(
                               (states) => const Size.fromWidth(310),
                             ),
@@ -170,17 +171,18 @@ class _SignUpScreenState extends State<SignUpScreen> {
                             children: <Widget>[
                               SvgPicture.asset('assets/images/google.svg'),
                               const Text(
-                                'Continue with Google',
+                                'Tiếp tục đăng nhập với Google',
                                 style: TextStyle(
                                   fontFamily: 'Montserrat',
-                                  color: dark,
+                                  color: appDarkColor,
                                   fontWeight: FontWeight.bold,
                                 ),
                               ),
                             ],
                           ),
                           style: ButtonStyle(
-                            backgroundColor: MaterialStateColor.resolveWith((states) => Colors.white),
+                            backgroundColor: MaterialStateColor.resolveWith(
+                                (states) => Colors.white),
                             fixedSize: MaterialStateProperty.resolveWith(
                               (states) => const Size.fromWidth(310),
                             ),
@@ -192,27 +194,30 @@ class _SignUpScreenState extends State<SignUpScreen> {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: <Widget>[
                               const Text(
-                                'Already have an account? ',
+                                'Đã có tài khoản? ',
                                 style: TextStyle(
                                   fontFamily: 'Poppins',
                                   fontSize: 10,
                                 ),
                               ),
                               TextButton(
-                                onPressed: () {},
+                                onPressed: () {
+                                  Navigator.pushNamed(context, '/main');
+                                },
                                 child: const Text(
-                                  'Sign in',
+                                  'Đăng nhập',
                                   style: TextStyle(
                                     fontFamily: 'Poppins',
                                     fontSize: 10,
                                     fontWeight: FontWeight.bold,
-                                    color: dark,
+                                    color: appDarkColor,
                                     decoration: TextDecoration.underline,
                                   ),
                                 ),
                                 style: ButtonStyle(
-                                  padding:
-                                      MaterialStateProperty.resolveWith((states) => const EdgeInsets.only(right: 30)),
+                                  padding: MaterialStateProperty.resolveWith(
+                                      (states) =>
+                                          const EdgeInsets.only(right: 30)),
                                 ),
                               )
                             ],

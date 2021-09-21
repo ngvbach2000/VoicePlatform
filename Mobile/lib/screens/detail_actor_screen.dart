@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:voice_platform/constants/constants.dart';
-import 'package:voice_platform/models/voice_actor.dart';
-import 'package:voice_platform/models/voice_demo.dart';
-import 'package:voice_platform/models/voice_type.dart';
-import 'package:voice_platform/widgets/audio_player_container.dart';
-import 'package:voice_platform/widgets/badge.dart';
-import 'package:voice_platform/widgets/detail_background.dart';
-import 'package:voice_platform/widgets/layout.dart';
+
+import '../constants/constants.dart';
+import '../models/voice_actor.dart';
+import '../models/voice_demo.dart';
+import '../models/voice_type.dart';
+import '../widgets/audio_player_container.dart';
+import '../widgets/badge.dart';
+import '../widgets/detail_background.dart';
+import '../widgets/layout.dart';
 
 class DetailActorScreen extends StatefulWidget {
   const DetailActorScreen({Key? key}) : super(key: key);
@@ -55,7 +56,8 @@ class _DetailActorScreenState extends State<DetailActorScreen> {
                             borderRadius: const BorderRadius.all(
                               Radius.circular(50.0),
                             ),
-                            border: Border.all(color: appYellowColor, width: 4.0),
+                            border:
+                                Border.all(color: appYellowColor, width: 4.0),
                           ),
                         ),
                         // name
@@ -99,7 +101,8 @@ class _DetailActorScreenState extends State<DetailActorScreen> {
                                       TextSpan(
                                           text: '${voiceActor.rating} ',
                                           style: TextStyle(
-                                            color: Colors.black.withOpacity(0.7),
+                                            color:
+                                                Colors.black.withOpacity(0.7),
                                             fontSize: 13.0,
                                           )),
                                       const WidgetSpan(
@@ -265,7 +268,8 @@ class _DetailActorScreenState extends State<DetailActorScreen> {
                     ),
                   ),
                   style: ButtonStyle(
-                    backgroundColor: MaterialStateProperty.all<Color>(appDarkColor),
+                    backgroundColor:
+                        MaterialStateProperty.all<Color>(appDarkColor),
                   ),
                 ),
               ),
