@@ -17,12 +17,5 @@ namespace VoicePlatform.Application.Controllers
         {
             _service = service;
         }
-
-        [HttpPost]
-        [Route("Authenticate")]
-        public async Task<Response> Authenticate([FromBody] AuthenticateRequest user)
-        {
-            return await _service.Authenticate(user);
-        }
     }
 }
