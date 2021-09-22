@@ -56,10 +56,5 @@ namespace VoicePlatform.Application.Configurations
                  });
             });
         }
-
-        public static void UseJwt(this IApplicationBuilder app)
-        {
-            app.UseMiddleware<JwtMiddleware>();
-        }
     }
 }

@@ -44,8 +44,6 @@ namespace VoicePlatform.Application
                            .AllowAnyMethod()
                            .AllowAnyOrigin());
 
-            app.UseJwt();
-
             app.UseExceptionHandler("/error");
 
             app.UseHttpsRedirection();

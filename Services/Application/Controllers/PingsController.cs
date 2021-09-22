@@ -19,7 +19,6 @@ namespace Application.Controllers
 
         [HttpGet]
         [Route("Pong")]
-        [Authorize("2")]
         public IActionResult GetPong()
         {
             var result = new

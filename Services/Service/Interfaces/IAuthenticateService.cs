@@ -11,7 +11,6 @@ namespace VoicePlatform.Service.Interfaces
 {
     public interface IAuthenticateService
     {
-        Task<Response> Authenticate(AuthenticateRequest authenticate);
-        Task<Authenticate> GetUserById(Guid Id);
+
     }
 }
