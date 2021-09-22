@@ -1,6 +1,6 @@
-﻿using Entity;
+﻿using VoicePlatform.Data;
 
-namespace Service
+namespace VoicePlatform.Service
 {
     public class BaseService
     {

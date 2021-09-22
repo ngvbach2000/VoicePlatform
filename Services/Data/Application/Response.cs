@@ -1,7 +1,7 @@
 ﻿using System.Collections;
-using Utilities.Constants;
+using VoicePlatform.Utilities.Constants;
 
-namespace Data.Application
+namespace VoicePlatform.Data.Application
 {
     public class Response
     {

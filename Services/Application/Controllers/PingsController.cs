@@ -1,4 +1,4 @@
-﻿using Application.Configurations.Middleware;
+﻿using VoicePlatform.Application.Configurations.Middleware;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Application.Controllers
@@ -19,6 +19,7 @@ namespace Application.Controllers
 
         [HttpGet]
         [Route("Pong")]
+        [Authorize("2")]
         public IActionResult GetPong()
         {
             var result = new

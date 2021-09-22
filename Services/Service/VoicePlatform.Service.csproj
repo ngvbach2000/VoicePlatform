@@ -9,9 +9,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Data\Data.csproj" />
-    <ProjectReference Include="..\Entity\Entity.csproj" />
-    <ProjectReference Include="..\Utility\Utility.csproj" />
+    <ProjectReference Include="..\Data\VoicePlatform.Data.csproj" />
+    <ProjectReference Include="..\Utility\VoicePlatform.Utility.csproj" />
   </ItemGroup>
 
 </Project>

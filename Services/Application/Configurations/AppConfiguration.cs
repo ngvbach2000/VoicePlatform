@@ -1,13 +1,13 @@
-﻿using Application.Configurations.Middleware;
-using Entity;
+﻿using VoicePlatform.Application.Configurations.Middleware;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.OpenApi.Models;
-using Service.Implementations;
-using Service.Interfaces;
 using System.Collections.Generic;
+using VoicePlatform.Data;
+using VoicePlatform.Service.Implementations;
+using VoicePlatform.Service.Interfaces;
 
-namespace Application.Configurations
+namespace VoicePlatform.Application.Configurations
 {
     public static class AppConfiguration
     {
@@ -16,7 +16,10 @@ namespace Application.Configurations
             services.AddHttpContextAccessor();
 
             services.AddScoped<IUserService, UserService>();
+            services.AddScoped<ICustomerService, CustomerService>();
             services.AddScoped<IArtistService, ArtistService>();
+            services.AddScoped<IAuthenticateService, AuthenticateService>();
+
 
             services.AddTransient<IUnitOfWork, UnitOfWork>();
         }
@@ -56,7 +59,7 @@ namespace Application.Configurations
 
         public static void UseJwt(this IApplicationBuilder app)
         {
-            //app.UseMiddleware<JwtMiddleware>();
+            app.UseMiddleware<JwtMiddleware>();
         }
     }
 }

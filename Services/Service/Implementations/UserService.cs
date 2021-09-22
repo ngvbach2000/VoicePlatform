@@ -1,12 +1,12 @@
-﻿using Entity.Contexts;
-using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Options;
-using Service.Interfaces;
-using Utility.Settings;
+using VoicePlatform.Data.Contexts;
+using VoicePlatform.Service.Interfaces;
+using VoicePlatform.Utility.Settings;
 
 #pragma warning disable
 
-namespace Service.Implementations
+namespace VoicePlatform.Service.Implementations
 {
     public class UserService : IUserService
     {

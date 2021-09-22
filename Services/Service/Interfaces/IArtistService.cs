@@ -1,13 +1,9 @@
-﻿using Data.Application;
-using Data.Requests.Artist;
-using Entity.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
+using VoicePlatform.Data.Application;
+using VoicePlatform.Data.Entities;
+using VoicePlatform.Data.Requests;
 
-namespace Service.Interfaces
+namespace VoicePlatform.Service.Interfaces
 {
     public interface IArtistService
     {

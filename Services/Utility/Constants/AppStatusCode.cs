@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Net;
 using System.Text;
 
-namespace Utilities.Constants
+namespace VoicePlatform.Utilities.Constants
 {
     public static class AppStatusCode
     {

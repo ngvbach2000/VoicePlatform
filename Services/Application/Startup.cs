@@ -1,14 +1,14 @@
-using Application.Configurations;
-using Entity.Contexts;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Utility.Settings;
+using VoicePlatform.Application.Configurations;
+using VoicePlatform.Data.Contexts;
+using VoicePlatform.Utility.Settings;
 
-namespace Application
+namespace VoicePlatform.Application
 {
     public class Startup
     {
@@ -44,7 +44,7 @@ namespace Application
                            .AllowAnyMethod()
                            .AllowAnyOrigin());
 
-            //app.UseJwt();
+            app.UseJwt();
 
             app.UseExceptionHandler("/error");
 

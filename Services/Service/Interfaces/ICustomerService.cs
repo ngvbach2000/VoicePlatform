@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 
-namespace VoicePlatform.Utility.Settings
+namespace VoicePlatform.Service.Interfaces
 {
-    public class AppSettings
+    public interface ICustomerService
     {
-        public string Secret { get; set; }
     }
 }

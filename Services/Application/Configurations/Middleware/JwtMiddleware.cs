@@ -1,15 +1,15 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
-using Service.Interfaces;
 using System;
 using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Utility.Settings;
+using VoicePlatform.Service.Interfaces;
+using VoicePlatform.Utility.Settings;
 
-namespace Application.Configurations.Middleware
+namespace VoicePlatform.Application.Configurations.Middleware
 {
     public class JwtMiddleware
     {
@@ -22,15 +22,15 @@ namespace Application.Configurations.Middleware
             _appSettings = appSettings.Value;
         }
 
-        public async Task Invoke(HttpContext context, IUserService userService)
+        public async Task Invoke(HttpContext context, IAuthenticateService authenticateService)
         {
             var token = context.Request.Headers["Authorization"].FirstOrDefault()?.Split(" ").Last();
             if (token != null)
-                AttachUserToContext(context, userService, token);
+                AttachUserToContext(context, authenticateService, token);
             await _next(context);
         }
 
-        private void AttachUserToContext(HttpContext context, IUserService userService, string token)
+        private async void AttachUserToContext(HttpContext context, IAuthenticateService authenticateService, string token)
         {
             try
             {
@@ -46,13 +46,18 @@ namespace Application.Configurations.Middleware
                 }, out SecurityToken validatedToken);
                 var jwtToken = (JwtSecurityToken)validatedToken;
                 var userId = Guid.Parse(jwtToken.Claims.First(x => x.Type == "id").Value);
-                //var roles = jwtToken.Claims.First(x => x.Type == "roles").Value;
-                //context.Items["User"] = userService.GetUserById(userId);
-                //context.Items["Roles"] = roles;
+                var role = jwtToken.Claims.First(x => x.Type == "role").Value;
+                var u = await authenticateService.GetUserById(userId);
+                if (u == null)
+                {
+                    return;
+                }
+                context.Items["User"] = u;
+                context.Items["Role"] = role;
             }
             catch (Exception e)
             {
-                e.ToString();
+                var error = e.ToString();
             }
         }
     }

@@ -1,20 +1,21 @@
-﻿using Data.Application;
-using Data.Requests.Artist;
-using Data.Responses.Artist;
-using Entity;
-using Entity.Entities;
-using Entity.Repositories;
-using Service.Interfaces;
+﻿using Microsoft.EntityFrameworkCore;
 using System;
 using System.Linq;
 using System.Threading.Tasks;
+using VoicePlatform.Data;
+using VoicePlatform.Data.Application;
+using VoicePlatform.Data.Entities;
+using VoicePlatform.Data.Repositories;
+using VoicePlatform.Data.Requests;
+using VoicePlatform.Data.Responses;
+using VoicePlatform.Service.Interfaces;
 
-namespace Service.Implementations
+namespace VoicePlatform.Service.Implementations
 {
     public class ArtistService : BaseService, IArtistService
     {
-        private IArtistRepository _artistRepository;
-        private IGenderRepository _genderRepository;
+        private readonly IArtistRepository _artistRepository;
+        private readonly IGenderRepository _genderRepository;
 
         public ArtistService(IUnitOfWork unitOfWork) : base(unitOfWork)
         {
@@ -24,7 +25,7 @@ namespace Service.Implementations
 
         public async Task<Response> GetAllArtist(Pagination pagination)
         {
-            var artists = _artistRepository.GetAll().Select(x => new ArtistResponse
+            var artists = await _artistRepository.GetAll().Select(x => new ArtistResponse
             {
                 Id = x.Id,
                 Username = x.Username,
@@ -38,7 +39,7 @@ namespace Service.Implementations
                 Price = x.Price,
                 Status = x.Status,
                 CreateDate = x.CreateDate,
-            }).OrderBy(x => x.Price).Skip((pagination.PageNumber - 1) * pagination.PageSize).Take(pagination.PageSize).ToList();
+            }).OrderBy(x => x.Price).Skip((pagination.PageNumber - 1) * pagination.PageSize).Take(pagination.PageSize).ToListAsync();
             return Response.OK(artists);
         }
 
@@ -93,15 +94,15 @@ namespace Service.Implementations
 
         private bool IsUsernameExist(ArtistRequest artist)
         {
-            return _artistRepository.GetMany(x => x.Username.Equals(artist.Username)).ToList().Count() > 0;
+            return _artistRepository.GetMany(x => x.Username.Equals(artist.Username)).ToList().Count > 0;
         }
         private bool IsEmailExist(ArtistRequest artist)
         {
-            return _artistRepository.GetMany(x => x.Email.Equals(artist.Email)).ToList().Count() > 0;
+            return _artistRepository.GetMany(x => x.Email.Equals(artist.Email)).ToList().Count > 0;
         }
         private bool IsPhoneExist(ArtistRequest artist)
         {
-            return _artistRepository.GetMany(x => x.Phone.Equals(artist.Phone)).ToList().Count() > 0;
+            return _artistRepository.GetMany(x => x.Phone.Equals(artist.Phone)).ToList().Count > 0;
         }
     }
 }

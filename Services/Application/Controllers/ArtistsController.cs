@@ -1,15 +1,15 @@
-﻿using Data.Application;
-using Data.Requests.Artist;
-using Entity.Entities;
-using Microsoft.AspNetCore.Mvc;
-using Service.Interfaces;
+﻿using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
+using VoicePlatform.Data.Application;
+using VoicePlatform.Data.Entities;
+using VoicePlatform.Data.Requests;
+using VoicePlatform.Service.Interfaces;
 
-namespace Application.Controllers
+namespace VoicePlatform.Application.Controllers
 {
     public class ArtistsController : Controller
     {
-        private IArtistService _service;
+        private readonly IArtistService _service;
 
         public ArtistsController(IArtistService service)
         {

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
 
-namespace Service.Interfaces
+namespace VoicePlatform.Service.Interfaces
 {
     public interface IUserService
     {

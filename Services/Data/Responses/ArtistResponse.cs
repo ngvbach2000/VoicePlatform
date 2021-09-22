@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Data.Responses.Artist
+namespace VoicePlatform.Data.Responses
 {
     public class ArtistResponse
     {
